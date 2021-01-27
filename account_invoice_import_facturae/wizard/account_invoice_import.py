@@ -65,18 +65,24 @@ class AccountInvoiceImport(models.TransientModel):
         modality = xml_root.find('FileHeader/Modality').text
         if modality == 'L':
             raise ValidationError(_('System does not allow lots'))
-        supplier_dict = self.facturae_parse_partner(xml_root, xml_root.find(
-            'Parties/SellerParty'
-        ))
+        if 'customer' in self.env.context:
+            partner_dict = self.facturae_parse_partner(xml_root, xml_root.find(
+                'Parties/BuyerParty'
+            ))
+            inv_type = 'out_invoice'
+        else:
+            partner_dict = self.facturae_parse_partner(xml_root, xml_root.find(
+                'Parties/SellerParty'
+            ))
+            inv_type = 'in_invoice'
         invoice = xml_root.find('Invoices/Invoice')
 
         inv_number_xpath = invoice.find('InvoiceHeader/InvoiceNumber')
-        inv_type = 'in_invoice'
         inv_class = invoice.find('InvoiceHeader/InvoiceClass')
         if inv_class is not None and inv_class.text not in ['OO', 'OC']:
             inv_type = 'in_refund'
         date_dt = datetime.strptime(
-            invoice.find('InvoiceIssueData/IssueDate').text, '%Y-%M-%d')
+            invoice.find('InvoiceIssueData/IssueDate').text, '%Y-%m-%d')
         date_start = False
         date_end = False
         amount_total = float(invoice.find('InvoiceTotals/InvoiceTotal').text)
@@ -90,7 +96,7 @@ class AccountInvoiceImport(models.TransientModel):
         attachments = {}
         res = {
             'type': inv_type,
-            'partner': supplier_dict,
+            'partner': partner_dict,
             'invoice_number': inv_number_xpath.text,
             'date': date_dt.date(),
             'date_due': False,
@@ -99,6 +105,7 @@ class AccountInvoiceImport(models.TransientModel):
             'currency': {'iso': invoice.find(
                 'InvoiceIssueData/InvoiceCurrencyCode').text},
             'amount_total': amount_total,
+            'check_total': amount_total,
             'amount_untaxed': amount_untaxed,
             'iban': False,
             'bic': False,
@@ -118,6 +125,7 @@ class AccountInvoiceImport(models.TransientModel):
         country = self.env['res.country'].search([('code_alpha3', '=', iso)])
         country.ensure_one()
         vat = partner.find('TaxIdentification/TaxIdentificationNumber').text
+        vat = vat.replace("-", "")
         if not vat.startswith(country.code):
             vat = country.code + vat
         return {

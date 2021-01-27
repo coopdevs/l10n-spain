@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fe:Facturae xmlns:fe="http://www.facturae.es/Facturae/2009/v3.2/Facturae" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        
+            <FileHeader>
+                <SchemaVersion>3.2</SchemaVersion>
+                <Modality>I</Modality>
+                <InvoiceIssuerType>EM</InvoiceIssuerType>
+                <Batch>
+                    <BatchIdentifier>INV/2021/000555020639Q</BatchIdentifier>
+                    <InvoicesCount>1</InvoicesCount>
+                    <TotalInvoicesAmount>
+                        <TotalAmount>121.00</TotalAmount>
+                        <EquivalentInEuros>121.00</EquivalentInEuros>
+                    </TotalInvoicesAmount>
+                    <TotalOutstandingAmount>
+                        <TotalAmount>121.00</TotalAmount>
+                        <EquivalentInEuros>121.00</EquivalentInEuros>
+                    </TotalOutstandingAmount>
+                    <TotalExecutableAmount>
+                        <TotalAmount>121.00</TotalAmount>
+                        <EquivalentInEuros>121.00</EquivalentInEuros>
+                    </TotalExecutableAmount>
+                    <InvoiceCurrencyCode>EUR</InvoiceCurrencyCode>
+                </Batch>
+            </FileHeader>
+            <Parties>
+                <SellerParty>
+                    
+        
+        <TaxIdentification>
+            <PersonTypeCode>J</PersonTypeCode>
+            <ResidenceTypeCode>E</ResidenceTypeCode>
+            <TaxIdentificationNumber>55020639Q</TaxIdentificationNumber>
+        </TaxIdentification>
+        
+        
+        <LegalEntity>
+            <CorporateName>YourCompany</CorporateName>
+            <TradeName>YourCompany</TradeName>
+            
+            
+        
+        <OverseasAddress>
+            <Address>1725 Slough Ave.</Address>
+            <PostCodeAndTown>18540Scranton</PostCodeAndTown>
+            <Province>Pennsylvania</Province>
+            <CountryCode>USA</CountryCode>
+        </OverseasAddress>
+        <ContactDetails>
+            <Telephone>+1 555 123 8069</Telephone>
+            
+            <WebAddress>http://www.example.com</WebAddress>
+            <ElectronicMail>info@yourcompany.example.com</ElectronicMail>
+            <ContactPersons>YourCompany</ContactPersons>
+            
+            
+            
+        </ContactDetails>
+    
+        </LegalEntity>
+        
+    
+                </SellerParty>
+                <BuyerParty>
+                    
+        
+        <TaxIdentification>
+            <PersonTypeCode>J</PersonTypeCode>
+            <ResidenceTypeCode>E</ResidenceTypeCode>
+            <TaxIdentificationNumber>03421018K</TaxIdentificationNumber>
+        </TaxIdentification>
+        
+        
+        <LegalEntity>
+            <CorporateName>Azure Interior</CorporateName>
+            <TradeName>Azure Interior</TradeName>
+            
+            
+        
+        <OverseasAddress>
+            <Address>3404  Edgewood Road</Address>
+            <PostCodeAndTown>72401Jonesboro</PostCodeAndTown>
+            <Province>Arkansas</Province>
+            <CountryCode>USA</CountryCode>
+        </OverseasAddress>
+        <ContactDetails>
+            <Telephone>(870)-931-0505</Telephone>
+            
+            <WebAddress>http://www.azure-interior.com</WebAddress>
+            <ElectronicMail>azure.Interior24@example.com</ElectronicMail>
+            <ContactPersons>Azure Interior</ContactPersons>
+            
+            
+            
+        </ContactDetails>
+    
+        </LegalEntity>
+        
+    
+                </BuyerParty>
+            </Parties>
+            <Invoices>
+                <Invoice>
+                    
+                    
+                    
+                    
+                        
+                        
+                            
+                        
+                    
+                    <InvoiceHeader>
+                        <InvoiceNumber>INV/2021/0005</InvoiceNumber>
+                        <InvoiceSeriesCode/>
+                        <InvoiceDocumentType>FC</InvoiceDocumentType>
+                        <InvoiceClass>OO</InvoiceClass>
+                        
+                    </InvoiceHeader>
+                    <InvoiceIssueData>
+                        <IssueDate>2021-04-09</IssueDate>
+                        
+                        
+                        
+                        <InvoiceCurrencyCode>EUR</InvoiceCurrencyCode>
+                        
+                        <TaxCurrencyCode>EUR</TaxCurrencyCode>
+                        <LanguageName>en</LanguageName>
+                        
+                    </InvoiceIssueData>
+                    <TaxesOutputs>
+                        
+                            <Tax>
+                                <TaxTypeCode>01</TaxTypeCode>
+                                <TaxRate>21.00</TaxRate>
+                                <TaxableBase>
+                                    <TotalAmount>100.00</TotalAmount>
+                                    <EquivalentInEuros>100.00</EquivalentInEuros>
+                                </TaxableBase>
+                                <TaxAmount>
+                                    <TotalAmount>21.00</TotalAmount>
+                                    <EquivalentInEuros>21.00</EquivalentInEuros>
+                                </TaxAmount>
+                                
+                                
+                                
+                                
+                            </Tax>
+                        
+                    </TaxesOutputs>
+                    
+                    <InvoiceTotals>
+                        <TotalGrossAmount>100.00</TotalGrossAmount>
+                        
+                        
+                        
+                        
+                        <TotalGrossAmountBeforeTaxes>100.00</TotalGrossAmountBeforeTaxes>
+                        <TotalTaxOutputs>21.00</TotalTaxOutputs>
+                        <TotalTaxesWithheld>0.00</TotalTaxesWithheld>
+                        <InvoiceTotal>121.00</InvoiceTotal>
+                        
+                        
+                        
+                        
+                        <TotalOutstandingAmount>121.00</TotalOutstandingAmount>
+                        
+                        
+                        <TotalExecutableAmount>121.00</TotalExecutableAmount>
+                        
+                        
+                    </InvoiceTotals>
+                    <Items>
+                        <InvoiceLine>
+                            
+                            
+                                
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            <ItemDescription>test</ItemDescription>
+                            <Quantity>1.0</Quantity>
+                            
+                            <UnitPriceWithoutTax>100.000000</UnitPriceWithoutTax>
+                            
+                            <TotalCost>100.000000</TotalCost>
+                            
+                            
+                            <GrossAmount>100.000000</GrossAmount>
+                            
+                            <TaxesOutputs>
+                                
+                                    <Tax>
+                                        <TaxTypeCode>01</TaxTypeCode>
+                                        <TaxRate>21.00</TaxRate>
+                                        <TaxableBase>
+                                            <TotalAmount>100.00</TotalAmount>
+                                            <EquivalentInEuros>100.00</EquivalentInEuros>
+                                        </TaxableBase>
+                                        <TaxAmount>
+                                            <TotalAmount>21.00</TotalAmount>
+                                            <EquivalentInEuros>21.00</EquivalentInEuros>
+                                        </TaxAmount>
+                                    </Tax>
+                                
+                            </TaxesOutputs>
+                            
+                            
+                            
+                            
+                            
+                            
+                        </InvoiceLine>
+                    </Items>
+                    <PaymentDetails>
+                            <Installment>
+                                <InstallmentDueDate>2021-05-31</InstallmentDueDate>
+                                <InstallmentAmount>121.00</InstallmentAmount>
+                                <PaymentMeans>04</PaymentMeans>
+                                
+                                
+                                
+                                <AccountToBeCredited>
+                                    <IBAN>FR7642424242424242424242424</IBAN>
+                                    
+                                    
+                                    <BIC>PSSTFRPPXXX</BIC>
+                                </AccountToBeCredited>
+                                
+                                
+                                
+                            </Installment>
+                    </PaymentDetails>
+                    
+                    
+                    
+                </Invoice>
+            </Invoices>
+            
+        
+        </fe:Facturae>

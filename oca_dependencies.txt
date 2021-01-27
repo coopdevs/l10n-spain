@@ -12,4 +12,4 @@ account-invoicing
 intrastat-extrastat
 stock-logistics-workflow
 delivery-carrier
-edi
+edi https://github.com/coopdevs/edi 12.0-account_invoice_import_out_invoices
