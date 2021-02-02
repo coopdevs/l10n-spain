@@ -15,5 +15,6 @@
     'depends': [
         # OCA/l10n-spain
         'account_payment_return_import_iso20022',
+        'account_banking_mandate'
     ],
 }
