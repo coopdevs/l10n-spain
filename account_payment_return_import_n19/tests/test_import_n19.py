@@ -28,6 +28,36 @@ class TestImport(TestPaymentReturnFile):
             'bank_account_id': cls.acc_bank.id,
         })
         cls.journal.bank_account_id = cls.acc_bank
+        cls.acc_number_customer_1 = 'ES1800598335623239116291'
+        cls.customer_1 = cls.env['res.partner'].create({
+            'name': "CUSTOMER 1"
+        })
+        cls.acc_bank_customer_1 = cls.env['res.partner.bank'].create({
+            'acc_number': cls.acc_number_customer_1,
+            'bank_name': 'TEST BANK CUSTOMER 1',
+            'company_id': cls.company.partner_id.id,
+            'partner_id': cls.customer_1.id,
+        })
+        cls.env['account.banking.mandate'].create({
+            'partner_id': cls.customer_1.id,
+            'partner_bank_id': cls.acc_bank_customer_1.id,
+            'unique_mandate_reference': '15805'
+        })
+        cls.acc_number_customer_2 = 'ES2913011611144790679726'
+        cls.customer_2 = cls.env['res.partner'].create({
+            'name': "CUSTOMER 2"
+        })
+        cls.acc_bank_customer_2 = cls.env['res.partner.bank'].create({
+            'acc_number': cls.acc_number_customer_2,
+            'bank_name': 'TEST BANK CUSTOMER 2',
+            'company_id': cls.company.partner_id.id,
+            'partner_id': cls.customer_2.id,
+        })
+        cls.env['account.banking.mandate'].create({
+            'partner_id': cls.customer_2.id,
+            'partner_bank_id': cls.acc_bank_customer_2.id,
+            'unique_mandate_reference': '20290'
+        })
 
     def test_payment_return_import_n19(self):
         """Test correct creation of single payment return."""
@@ -48,3 +78,9 @@ class TestImport(TestPaymentReturnFile):
             local_account='ES9230044573352643814459',
             date='2020-10-26', transactions=transactions
         )
+        payment_lines = self.env['payment.return.line'].search([
+            '|',
+            ('partner_id', '=', self.customer_1.id),
+            ('partner_id', '=', self.customer_2.id)
+        ])
+        self.assertEquals(len(payment_lines), 2)

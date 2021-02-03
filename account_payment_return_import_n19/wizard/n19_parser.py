@@ -40,13 +40,6 @@ class N19Parser(object):
             'partner_name': line[126:196].strip(),
             'account_number': line[411:445].strip(),
             'raw_import_data': line,
-            'partner_id': self._match_partner_id(line)
+            'mandate': line[45:80].strip(),
         }
         transactions.append(transaction)
-
-    def _match_partner_id(self, line):
-        mandate_reference = line[45:80].strip()
-        mandate = self.env['account.banking.mandate'].search([
-            ('unique_mandate_reference', '=', mandate_reference),
-        ])
-        return mandate and mandate.partner_id.id

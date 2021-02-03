@@ -18,7 +18,14 @@ class PaymentReturnImport(models.TransientModel):
         try:
             _logger.debug("Try parsing as a Norma 19 "
                           "Debit Credit Notification.")
-            return n19_parser.parse(data_file)
+            parsed_return_import = n19_parser.parse(data_file)
+            for transaction in parsed_return_import['transactions']:
+                mandate = self.env['account.banking.mandate'].search([
+                    ('unique_mandate_reference', '=', transaction.pop('mandate')),
+                ])
+                if mandate:
+                    transaction['partner_id'] = mandate.partner_id.id
+            return parsed_return_import
         except ValueError:
             _logger.debug("Payment return file is not a Norma 19 "
                           "supported file.", exc_info=True)
