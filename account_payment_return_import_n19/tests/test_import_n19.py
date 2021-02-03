@@ -67,7 +67,7 @@ class TestImport(TestPaymentReturnFile):
                 'reference': '611533',
             },
             {
-                'returned_amount': 52.07,
+                'returned_amount': 52.67,
                 'reference': '620091',
             },
         ]

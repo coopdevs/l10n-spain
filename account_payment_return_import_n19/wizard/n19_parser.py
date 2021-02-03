@@ -35,7 +35,7 @@ class N19Parser(object):
         transaction = {
             'reference': line[10:45].strip(),
             'reason_code': line[593:597],
-            'amount': (float(line[88:97]) + (float(line[98:99]) / 100)),
+            'amount': (float(line[88:97]) + (float(line[97:99]) / 100)),
             'concept': line[441:581].strip(),
             'partner_name': line[126:196].strip(),
             'account_number': line[411:445].strip(),
