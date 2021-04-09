@@ -18,7 +18,7 @@ configurations = {
 
 configurations_customer = {
     'facturae_customer_01.xml': {
-        'country': 'ESP', 'vat': 'ESA86025558', 'product_code': 'VNAC'
+        'country': 'ESP', 'vat': 'ES03421018K', 'product_code': 'VNAC'
     }
 }
 
