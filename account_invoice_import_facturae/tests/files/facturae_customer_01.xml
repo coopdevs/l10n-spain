@@ -44,7 +44,7 @@
             <Address>1725 Slough Ave.</Address>
             <PostCodeAndTown>18540Scranton</PostCodeAndTown>
             <Province>Pennsylvania</Province>
-            <CountryCode>USA</CountryCode>
+            <CountryCode>ESP</CountryCode>
         </OverseasAddress>
         <ContactDetails>
             <Telephone>+1 555 123 8069</Telephone>
@@ -214,6 +214,7 @@
                                     </Tax>
                                 
                             </TaxesOutputs>
+                            <ArticleCode>VNAC</ArticleCode>
                             
                             
                             
