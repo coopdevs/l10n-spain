@@ -25,6 +25,7 @@ AEAT_STATES = [
     ("not_sent", "Not sent"),
     ("sent", "Sent"),
     ("sent_w_errors", "Accepted with errors"),
+    ("incorrect", "Incorrect"),
 ]
 
 
